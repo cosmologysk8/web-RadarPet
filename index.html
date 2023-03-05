@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Estilos para las secciones principales */
+main {
+  padding: 20px;
+}
+
+
+/* Estilos para los section */
+section {
+  margin-bottom: 50px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Desplazamiento horizontal, desplazamiento vertical, difuminación y color de sombra */
+  padding: 20px; /* Espacio interno alrededor del section */
+  background-color: #f5f5f5; /* Color de fondo sólido */
+  background-image: url("imagen_de_fondo.jpg"); /* Imagen de fondo */
+  background-size: cover; /* Ajustar imagen al tamaño del section */
+  color: #333; /* Color de texto */
+}
+
+/* Estilos para los títulos de los section */
+section h2 {
+  margin-top: 0;
+  font-size: 36px;
+  text-align: center;
+}
+
+/* Estilos para los párrafos de los section */
+section p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Estilos para las listas de los section */
+section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Estilos para los elementos de la lista de los section */
+section li {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Estilos para los botones de los section */
+section a {
+  display: block;
+  text-align: center;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease-in-out;
+}
+
+section a:hover {
+  background-color: #0069d9;
+}
+
+/* Estilos para los formularios de los section */
+section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos para las etiquetas de los formularios de los section */
+section form label {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Estilos para los campos de entrada de los formularios de los section */
+section form input,
+section form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para los botones de envío de los formularios de los section */
+section form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+section form button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+#pricing {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+}
+
+#pricing h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+#pricing p {
+  color: #666;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#pricing .row {
+  display: flex;
+  justify-content: center;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-basis: calc(33.33% - 20px);
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pricing-card:not(:last-child) {
+  margin-right: 20px;
+}
+
+.pricing-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.pricing-card .price {
+  font-size: 40px;
+  font-weight: bold;
+  color: #005fec;
+  margin-bottom: 30px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 240px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.pricing-card li {
+  padding: 10px 0;
+}
+
+.pricing-card a.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #005fec;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pricing-card a.btn:hover {
+  background-color: #003e94;
+}
+/* Estilos para el pie de página */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
+
+.contenedor-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.redes-sociales a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.enlaces a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.enlaces a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Radar Pet</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Características</a></li>
+        <li><a href="#">Precios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h2>¿Qué es nuestra aplicación con radar para mascotas?</h2>
+      <p>Descripción de la aplicación y sus características.</p>
+      <ul>
+        <li>Rastreo en tiempo real: la aplicación podría proporcionar la ubicación exacta de la mascota en tiempo real, permitiéndole al dueño monitorear su ubicación y recibir alertas en caso de que la mascota se aleje demasiado.</li>
+        <li>Geovallas: se pueden establecer zonas de seguridad, también conocidas como geovallas, en la aplicación, lo que permite a los dueños recibir alertas cuando sus mascotas se mueven dentro o fuera de estas zonas.</li>
+        <li>Historial de ubicaciones: la aplicación podría mostrar el historial de ubicaciones de la mascota, lo que permite al dueño ver por dónde ha estado su mascota y cuánto tiempo ha pasado en cada lugar.</li>
+        <li>Alertas de batería baja: la aplicación podría alertar al dueño cuando la batería de la mascota está baja, lo que les permitiría recargar el dispositivo antes de que se agote.</li>
+        <li>Registro de salud: la aplicación podría permitir al dueño registrar información sobre la salud de su mascota, incluyendo visitas al veterinario, medicamentos, vacunas y otras notas importantes.</li>
+        <li>Compartir ubicación: algunos propietarios pueden querer compartir la ubicación de sus mascotas con amigos o familiares, y la aplicación podría permitirles hacerlo de manera segura y controlada.</li>
+        <li>Comunidad de dueños de mascotas: la aplicación podría incluir una comunidad en línea para propietarios de mascotas, permitiendo a los usuarios conectarse con otros dueños de mascotas, hacer preguntas y compartir consejos y trucos.
+        </li>
+      </ul>
+      <a href="#">Descargar ahora</a>
+    </section>
+  
+    <section>
+      <h2>¿Cómo funciona?</h2>
+      <p>La aplicación es muy fácil de usar, ideal para todo tipo de edades</p>
+      <p>
+        <img src="https://d128mjo55rz53e.cloudfront.net/media/images/geofence-dogs_66qPcQQ.max-400x400.format-jpeg_glVkkfs.jpg" alt="">
+        <img src="https://imagekit.androidphoria.com/wp-content/uploads/Los-7-mejores-GPS-para-perros-y-gatos-con-app-para-Android.jpg" alt="" style="width: 800px;height: 400px;margin-left: 20px;">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_997724-MLA51590675075_092022-V.jpg" alt="" style="height: 400px;margin-left: 20px;">
+      </p>
+    </section>
+
+
+    <section id="pricing">
+      <div class="container">
+        <h2>¿Por qué elegir nuestra aplicación con radar para mascotas?</h2>
+      <p>Lista de razones por las que tu aplicación es la mejor opción para los propietarios de mascotas. Incluye testimonios de usuarios satisfechos y estadísticas.</p>
+        <h2>Planes y precios</h2>
+        <p>Ofrecemos una variedad de planes de suscripción para adaptarnos a las necesidades de todos los dueños de mascotas. Todos los planes incluyen acceso completo a la aplicación de radar para mascotas y al dispositivo de seguimiento, y pueden ser cancelados en cualquier momento.</p>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Básico</h3>
+              <div class="price">$4.99/mes</div>
+              <ul>
+                <li>1 dispositivo de seguimiento</li>
+                <li>Acceso completo a la aplicación</li>
+                <li>Monitoreo en tiempo real</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Elegir plan</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Avanzado</h3>
+              <div class="price">$9.99/mes</div>
+              <ul>
+                <li>2 dispositivos de seguimiento</li>
+                <li>Acceso completo a la aplicación</li>
+                <li>Monitoreo en tiempo real</li>
+                <li>Geovallas personalizadas</li>
+                <li>Registro de salud</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Elegir plan</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing-card">
+              <h3>Premium</h3>
+              <div class="price">$19.99/mes</div>
+              <ul>
+                <li>3 dispositivos de seguimiento</li>
+                <li>Acceso completo a la aplicación</li>
+                <li>Monitoreo en tiempo real</li>
+                <li>Geovallas personalizadas</li>
+                <li>Registro de salud</li>
+                <li>Compartir ubicación</li>
+                <li>Comunidad de dueños de mascotas</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Elegir plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section>
+      <h2>Preguntas frecuentes</h2>
+      <ul>
+        <li><strong>¿La aplicación funciona en cualquier dispositivo móvil?</strong><br>Sí, nuestra aplicación es compatible con cualquier dispositivo móvil.</li>
+        <li><strong>¿Cómo se conecta la aplicación con el collar de mi mascota?</strong><br>La aplicación se conecta a través de Bluetooth con el collar de tu mascota.</li>
+        <li><strong>¿La aplicación funciona en cualquier país?</strong><br>Sí, nuestra aplicación funciona en cualquier país. Pero muchas de las funcionalidades quedan limitadas a España, como la ubicación de parques de Perros.</li>
+      </ul>
+    </section>
+  
+    <section>
+      <h2>Contáctanos</h2>
+      <form>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
+  
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  
+  
+  <footer>
+    <div class="contenedor-footer">
+      <div class="logo">
+        <img src="https://www.petradar.mx/wp-content/uploads/pet-radar-png.png" alt="Logo de la empresa" >
+        <p>Todos los derechos reservados &copy; 2023</p>
+      </div>
+      <div class="redes-sociales">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="enlaces">
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
